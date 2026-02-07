@@ -1,0 +1,69 @@
+ICTester
+===========
+MCbx 2014-21
+GNU GPL
+
+This program allows to test integrated circuits using EPE IC Tester in 
+modern operating systems. It has also a built-in ROM/PROM/EPROM reader.
+It is using the EPE IC tester hardware.
+
+
+The hardware
+--------------
+ The hardware description can be found in the link below as 
+ "Digital IC Tester":
+ http://www.epemag3.com/lib/free-projects.html
+ 
+ Firmware and source code of it, as well as test sheets and old (Win9x) 
+ program:
+ ftp://ftp.epemag.wimborne.co.uk/pub/PICS/ICtester/
+
+
+Features
+-----------
+ - GUI and command-line based testing of logic ICs.
+ - Creating and editing of test scripts and IC models using GUI.
+ - Reading, comparing and verifying ROM/PROM/EPROM memory chips.
+ - Adding new ROM/PROM/EPROM chips using GUI or text files
+ - Testing 2114, 2102, 6810 and 6116 SRAM chips (command-line programs)
+ - Qt powered - runs in Linux and Windows
+
+
+Building the source code
+--------------------------
+Get a Qt development package for Your operating system distribution.
+If you don't have Qt 5.x, you may need a Qt Serial Port library. For
+Qt 4.x it's needed - see https://wiki.qt.io/Qt_Serial_Port
+ In 5.x versions it usually comes built-in.
+Then we can make the project. In Linux:
+1. cd to the source directory (directory where "ICTester.pro" file is)
+2. mkdir bin
+3. cd bin
+4. qmake ../ICTester.pro
+5. make
+You will get all binaries in the bin folder's subdirectories.
+In Windows, it's nice to use Qt Creator. After importing project to 
+your Qt just try to build it in release mode.
+
+
+Known issues
+--------------
+Some 2716 chips are using strange signals which is not 100% compliant 
+with TTL logic. These chips may be unstable during reading. To make 
+sure that your ROM reads OK, after reading move it a little in socket 
+and verify. Additionally old chips may suffer bit rot in lower voltage
+caused by switching transistor - unfortunately in these cases it is 
+needed to use a programmer with ability to bump the Vcc up a bit (e.g. 
+to 5.5V or 6V) like Willem v. 3.0.
+
+Because the tester has pull-up resistors, it can't verify one problem 
+with outputs - when there is high state or nothing. This damage is 
+very rare and can be verified using TTL probe.
+
+
+Manual
+----------
+All instructions, informations and file formats descriptions can be 
+read in HTML manual enclosed with source code in "doc" subdirectory.
+
+MCbx

@@ -1,0 +1,66 @@
+CHANGES since 20190910
+
+v. 20260702
+-------------
+ - Fork created from ICTester (https://oldcomputer.info/software/ictester/index.html)
+ - Try to make it work with modern low-cost hardware (Pico or maybe Uno Mega)
+
+v. 20250712
+-------------
+ - Qt6 port (tested on Debian Trixie, Qt 6.8.2, Qt Creator 16.8.1). It will NOT build
+   under Qt 4 or Qt 5! Use the previous version for Qt 5!
+ - BUGFIX: The race condition in the chip editor (return key moves selection two times or 
+   not) has been fixed... probably :-).
+ - In this specific versions pin auto-coloring wildcards may work strange, this is a new 
+   Qt's behaviour. You have been warned.
+
+v. 20210823
+-------------
+ - 2111test tool.
+ - Bugfix in sheet editor font selection.
+
+
+v. 20200622 - NOT RELEASED
+-------------
+ - It is possible to select logger and ROM diagnostics font in the configuration which helps
+   a little when HiDPI screen is used.
+ - It is possible to change toolbar size which helps if a touchscreen is used.
+ - A Start Test button can be placed in a toolbar which slightly improves touchscreen operation.
+ - Bugfix - The IC preview in open window scales properly. Thanks to DP for noticing this bug.
+ - Some work to make it more or less operating in Haiku OS. Whyt not? SerialPort library has
+   still some inconsistencies.
+ - Some of NULL->nullptr conversions for recent compiler screeches. A screeching about losing
+   precision when converting unsigned Char to Byte will not be addressed until someone buys
+   everyone a notebook with 640GB of RAM as the proposed solution literally chews 4 bytes per
+   conversion.
+
+Warning: No, this won't work in Qt6. There is no Serial Port library in it!
+
+v. 20200411
+-------------
+ - Bugfix in external tools feature which allowed deleted items to presist in configuration
+   file.
+ - Added test for 93415 1kx1 S-RAM, this rare chip works usually as some "cache" in old arcade 
+   machines and serial adapters.
+
+v. 20191028
+--------------
+ - Introduced feature for automatic pin type setting in editor. If a wildcard is met, the pin
+   type is just changed automatically according to specific wildcards. It is possible to set
+   wildcards for Vcc, GND, Output and NC to speed up models development.
+   If you don't want to change type, click it back after editing.
+ - Added platform/build architecture information in boot screen.
+ - Bugfix: Descriptions >49 characters not shown in preview. Now >129 are not shown.
+ - Comments in files. Works, but comments may be lost when used with original software as its
+   support for comments is scarce. Comments ending with ; are displayed in log so you can report
+   what is tested. Comments with no ";" at the end are totally rescissed even from numbering.
+ - ICTESTCON: Now it fails gracefully on Ctrl-C and shuts the voltage down. If hangs - kill -9.
+      Not sure will this even work on Windows.
+ - S-RAM test tools: Help clarified.
+ - RAM modules with external tools, it is possible to send port, baudrate and timeout to external
+   tool, manage them from config page.
+   EXAMPLE of launching RAM test from arbitrary directory with space in name ("Dev Version" is a
+   directory) and reset at the end (ends with !):
+          xterm -e "/home/mcbx/Electronics/ICTester/Dev\ Version/2102test $P:$B"!
+ - BUGFIX: Program shuts down when ENTER pressed sometimes in chip editor.
+ - A new SRAM test tool: 6810test, for testing 6810 S-RAM chips (128x8bit).

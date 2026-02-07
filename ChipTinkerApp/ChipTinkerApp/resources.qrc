@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/Resources/logIcons">
+        <file>compErr.png</file>
+        <file>data.png</file>
+        <file>devErr.png</file>
+        <file>failed.png</file>
+        <file>info.png</file>
+        <file>io.png</file>
+        <file>passed.png</file>
+        <file>power.png</file>
+        <file>read.png</file>
+        <file>reset.png</file>
+    </qresource>
+    <qresource prefix="/Resources/Power">
+        <file>socket.png</file>
+    </qresource>
+    <qresource prefix="/Resources/glyphs">
+        <file>settings.png</file>
+        <file>reset_bar.png</file>
+        <file>options.png</file>
+        <file>copyLog.png</file>
+        <file>newFile.png</file>
+        <file>editSheet.png</file>
+        <file>openFile.png</file>
+        <file>dumper.png</file>
+        <file>identifier.png</file>
+        <file>ignored.png</file>
+        <file>series.png</file>
+    </qresource>
+    <qresource prefix="/"/>
+    <qresource prefix="/i18n">
+        <file>_QtICTester_pl_PL.qm</file>
+    </qresource>
+</RCC>
